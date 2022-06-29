@@ -1,0 +1,12 @@
+.tarjetaProducto{
+    width: 30%;
+    height: 40%;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 2rem 0rem;
+}
+
+img{
+    width: 10rem;
+}
