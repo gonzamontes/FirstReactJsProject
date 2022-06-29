@@ -22,3 +22,13 @@ button{
     font-size: 1.8rem;
     font-weight: bolder;
 }
+
+.agregarCarrito{
+    width: auto;
+    font-size: large;
+    margin-bottom: 1rem;
+}
+
+button:hover{
+    color: red;
+}

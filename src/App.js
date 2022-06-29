@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <NavBar/>
       <ItemListContainer greeting={"Propiedad Greeting!"} />
-      <ItemCount className="contadorItem" />
     </div>
   );
 }

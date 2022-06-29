@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 
-const ItemCount = () => {
+const ItemCount = ({agregarCarrito}) => {
     
     const [stock, setstock]= useState(10);
     const [carrito, setCarrito]= useState(0);
@@ -24,10 +24,6 @@ const ItemCount = () => {
             }
         }
     
-        const agregarCarrito = () => {
-            setCarrito(0)
-        }
-    
 
     return (
         <div className='contenedorCard'>
@@ -38,6 +34,7 @@ const ItemCount = () => {
                 <button onClick={restarCarrito}>-</button>
             </div>
             <p>Stock disponible: {stock}</p>
+            <button className='agregarCarrito' onClick={agregarCarrito}>Agregar al carrito</button>
         </div>
 
         
