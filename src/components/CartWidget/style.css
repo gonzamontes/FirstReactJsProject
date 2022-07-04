@@ -1,7 +1,13 @@
 .logo-carrito{
-    color: red;
+    color: whitesmoke;
     position: absolute;
     top: 20px;
     right: 4rem;
 
     }
+
+
+.logo-carrito:hover{
+    color: red;
+
+    }   

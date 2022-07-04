@@ -23,18 +23,24 @@ const ItemCount = ({agregarCarrito}) => {
                 setCarrito(carrito-1)
             }
         }
+
+        const agregarAlCarrito = () => {
+            if (carrito>0){
+                setCarrito(carrito-carrito)
+            }
+        }
     
 
     return (
         <div className='contenedorCard'>
-            <h3>Comprar Remera</h3>
+            <h3>Producto</h3>
             <div className='cardContador'>
                 <button onClick={sumarCarrito}>+</button>
                 <p>{carrito}</p>
                 <button onClick={restarCarrito}>-</button>
             </div>
             <p>Stock disponible: {stock}</p>
-            <button className='agregarCarrito' onClick={agregarCarrito}>Agregar al carrito</button>
+            <button onClick={agregarAlCarrito} className='agregarCarrito' >Agregar al carrito</button>
         </div>
 
         
