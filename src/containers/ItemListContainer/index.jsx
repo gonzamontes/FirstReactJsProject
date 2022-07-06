@@ -1,10 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import ItemCount from '../../components/ItemCountt'
 import ItemList from '../../components/ItemList'
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
   
   const [productos, setProductos] = useState(null)
 
@@ -25,20 +24,10 @@ const ItemListContainer = ({greeting}) => {
 
     getProductos()
   })
-
-  const agregarCarrito = () => {
-    console.log("se agrego al carrito")
-  }
   
   return (
     <div>
-        <p>{greeting}</p>
-        <ItemCount agregarCarrito={agregarCarrito}/>
-        {productos ?
-        <ItemList products={productos}/>
-        :
-        null
-        }
+      <ItemList products={productos}/>
     </div>
   )
 }
