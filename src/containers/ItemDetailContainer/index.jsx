@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemDetail from '../../components/ItemDetail'
+import ItemCount from '../../components/ItemCountt'
 
 const ItemDetailContainer = () => {
 
@@ -22,7 +23,12 @@ const ItemDetailContainer = () => {
     }, [])
 
     return (
-        <ItemDetail product={productDetail}/>
+        
+        <div>
+            <ItemDetail product={productDetail}/>
+            <ItemCount product={productDetail}/>
+        </div>
+        
     )
 }
 

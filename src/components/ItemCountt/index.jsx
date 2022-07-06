@@ -2,18 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import './styles.css';
 
-const ItemCount = ({agregarCarrito}) => {
+const ItemCount = ({product}) => {
     
+
     const [stock, setstock]= useState(10);
     const [carrito, setCarrito]= useState(0);
-
+    const [compra, setCompra]= useState(0);
     
+        
     
         const sumarCarrito = () => {
             
             if ((stock >= 1)){
                 setstock(stock - 1)
                 setCarrito(carrito+1)
+                setCompra(compra + Math.floor(product.price))
             }
         }
 
@@ -21,6 +24,7 @@ const ItemCount = ({agregarCarrito}) => {
             if (carrito>0){
                 setstock(stock + 1)
                 setCarrito(carrito-1)
+                setCompra(compra - Math.floor(product.price))
             }
         }
 
@@ -33,7 +37,7 @@ const ItemCount = ({agregarCarrito}) => {
 
     return (
         <div className='contenedorCard'>
-            <h3>Producto</h3>
+            <h3>{product.title}</h3>
             <div className='cardContador'>
                 <button onClick={sumarCarrito}>+</button>
                 <p>{carrito}</p>
@@ -41,6 +45,7 @@ const ItemCount = ({agregarCarrito}) => {
             </div>
             <p>Stock disponible: {stock}</p>
             <button onClick={agregarAlCarrito} className='agregarCarrito' >Agregar al carrito</button>
+            <p>El precio total sera de $ <span>{compra}</span></p>
         </div>
 
         
