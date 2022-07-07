@@ -2,10 +2,14 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemList from '../../components/ItemList'
+import {useParams} from 'react-router-dom'
 
 const ItemListContainer = () => {
   
-  const [productos, setProductos] = useState(null)
+  const params = useParams();
+
+  const [productos, setProductos] = useState([])
+  const [productosFiltrados, setProductosFiltrados] = useState([])
 
   useEffect(()=> {
 
@@ -13,9 +17,7 @@ const ItemListContainer = () => {
       try{
         const response = await fetch('https://fakestoreapi.com/products')
         const data = await response.json();
-        console.log(data);
         setProductos(data);
-
       }catch(error) {
         console.log("Se produjo un error")
         console.log(error)
@@ -23,11 +25,24 @@ const ItemListContainer = () => {
     }
 
     getProductos()
-  })
+  },[])
+
+  useEffect(()=>{
+    if (params?.categoryId){
+      const productosFiltrados = productos.filter(producto => producto.category === params.categoryId)
+      setProductosFiltrados(productosFiltrados)
+    } else{
+      setProductosFiltrados(productos)
+    }
+    }, [params, productos])
   
   return (
     <div>
-      <ItemList products={productos}/>
+        {productos ?
+        <ItemList products={productosFiltrados}/>
+        :
+        null
+        }
     </div>
   )
 }

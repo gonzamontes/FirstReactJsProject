@@ -5,8 +5,10 @@
     border-style: groove;
     border-radius: 10px;
     margin: 2rem 0rem;
+    text-align: center;
 }
 
 img{
     width: 10rem;
+    justify-items: center;
 }
