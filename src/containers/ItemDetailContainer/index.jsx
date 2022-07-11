@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemDetail from '../../components/ItemDetail'
-import ItemCount from '../../components/ItemCountt'
 import {useParams} from 'react-router-dom';
 import './styles.css';
 
@@ -28,12 +27,13 @@ const ItemDetailContainer = () => {
         getProductos();
     }, [params])
 
+
+
     return (
         
         Object.keys(productDetail).length !==0 ?
         <div>
             <ItemDetail product={productDetail} key={productDetail.id}/>
-            <ItemCount product={productDetail} key={productDetail.id} />
         </div>
         
         :
