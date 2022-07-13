@@ -6,10 +6,12 @@ import ItemListContainer from './containers/ItemListContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from './components/NotFound';
 import Cart from './containers/Cart';
+import ShopProvider from './context/ShopContext';
 
 function App() {
   return (
-    <BrowserRouter>
+    <ShopProvider>
+      <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer/>}></Route>
@@ -19,6 +21,7 @@ function App() {
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>
+    </ShopProvider>
   );
 }
 
