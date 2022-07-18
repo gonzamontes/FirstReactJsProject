@@ -9,8 +9,6 @@ const ShopProvider = ({ children }) => {
     const addItem = (producto, cantidad) => {
         const productoRepetido = isInCart(producto)
 
-        setCart([...cart, {...producto, quantity: cantidad}]);
-
         if (productoRepetido) {
             productoRepetido.quantity += cantidad
             setCart([...cart])
@@ -18,6 +16,15 @@ const ShopProvider = ({ children }) => {
             setCart([...cart, {...producto, quantity: cantidad}])
         }
             
+    }
+
+    const removeItem = (producto) => {
+        const productoAEliminar = isInCart(producto)
+
+        if (productoAEliminar) {
+            productoAEliminar.quantity -= productoAEliminar.quantity
+        }
+
     }
 
     const isInCart = (producto) => {

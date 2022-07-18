@@ -33,3 +33,27 @@ button{
 button:hover{
     color: red;
 }
+
+div .botones{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.finalizarCompra{
+    width: 30rem;
+    font-size: large;
+    margin:  5px auto;
+    padding: 4px 10px;
+    border: solid rgb(151, 181, 191) 2px;
+    border-radius: 10px;
+}
+
+.seguirComprando{
+    width: 30rem;
+    font-size: large;
+    margin: 5px auto;
+    padding: 4px 10px;
+    border: solid rgb(151, 181, 191) 2px;
+    border-radius: 10px;
+}

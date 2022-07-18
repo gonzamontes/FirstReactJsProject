@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css';
 import { useNavigate } from "react-router-dom";
 
-const Item = ({product}) => {
+const ItemEnCarrito = ({product}) => {
 
   const navigate = useNavigate();
   
@@ -25,4 +25,4 @@ const Item = ({product}) => {
   )
 }
 
-export default Item
+export default ItemEnCarrito

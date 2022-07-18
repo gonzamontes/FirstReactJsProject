@@ -42,6 +42,11 @@ const ItemCount = ({product, cantidad}) => {
         const agregarCarrito = () => {
             setCarrito(contador)
             setstock(cantidad-contador)
+            addItem(product, contador)
+        }
+
+        const seguirComprando = () => {
+            navigate('/')
         }
     
 
@@ -58,10 +63,10 @@ const ItemCount = ({product, cantidad}) => {
             {!carrito ?
                 <button className='agregarCarrito' onClick={agregarCarrito} >Agregar al carrito</button>
                 :
-                <button onClick={finalizaCompra} className='agregarCarrito' >Finalizar Compra</button>
-                // <div>
-                //     
-                // </div>
+                <div className='botones'>
+                    <button onClick={finalizaCompra} className='finalizarCompra' >Pasar a finalizar la compra</button>
+                    <button onClick={seguirComprando} className='seguirComprando' >Continuar comprando!</button>
+                </div>
                 
             }
             

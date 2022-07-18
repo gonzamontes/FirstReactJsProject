@@ -1,0 +1,60 @@
+.productoEnCarrito{
+    border: groove rgb(151, 181, 191) 1px;
+    border-left: 0px;
+    border-right: 0px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.seccionIzquierda{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.seccionDerecha{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto 3rem;
+
+}
+
+.cardContadorCart{
+    position: center;
+    width: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 5px auto;
+}
+
+.seccionDerecha h3{
+    margin: 5 auto;
+}
+
+.eliminarDeCarrito{
+    margin: auto 3rem;
+    color: rgba(6, 47, 98, 0.794);
+
+    width:auto;
+    font-size: medium;
+    border: solid 1px rgba(6, 47, 98, 0.794);
+    border-radius: 5px;
+}
+
+.precioCarrito{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.precioDelProducto{
+    margin: 5rem 0rem 2rem 0rem;
+}
+
+.figuraPrecio{
+    margin: 0;
+}
