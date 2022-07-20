@@ -9,9 +9,14 @@ const ItemEnCarrito = ({product}) => {
     const navigate = useNavigate();
 
     const {removeItem} = useContext(Shop)
+    const {addItem} = useContext(Shop)
 
     const [contador, setContador] = useState(0)
     const [total, setTotal] = useState(product.quantity)
+
+    // ver si hay productos en la pagina del carrito
+
+    const [productosEnCarrito, setProductosEnCarrito] = useState(0)
 
     const handleDetail = () => {
         navigate(`/detail/${product.id}`)
@@ -30,6 +35,14 @@ const ItemEnCarrito = ({product}) => {
     const eliminarProducto = () => {
         setTotal(0)
         removeItem(product)
+    }
+
+    const hayProductos = () => {
+        if (productosEnCarrito>0){
+            return true
+        } else{
+            return false
+        }
     }
 
     return (

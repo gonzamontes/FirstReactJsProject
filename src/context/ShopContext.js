@@ -7,6 +7,7 @@ const ShopProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addItem = (producto, cantidad) => {
+        
         const productoRepetido = isInCart(producto)
 
         if (productoRepetido) {
@@ -24,6 +25,8 @@ const ShopProvider = ({ children }) => {
         if (productoAEliminar) {
             productoAEliminar.quantity -= productoAEliminar.quantity
         }
+
+        console.log(cart)
 
     }
 

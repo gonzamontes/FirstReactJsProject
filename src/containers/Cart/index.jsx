@@ -9,14 +9,19 @@ const Cart = () => {
   return (
 
     <div className='contenedorCarrito'>
-        {cart.map(producto => {
-            return <>
-              <ItemEnCarrito product={producto} key={producto.id} />
-            </>
-        })}
+      { cart ?
+      
+          cart.map(producto => {
+              return <>
+                <ItemEnCarrito product={producto} key={producto.id} />
+              </>
+          })
+        : 
+        <p>No hay oroductos</p>
+      }
     </div>
 
   )
-}
+} 
 
 export default Cart
