@@ -9,40 +9,33 @@ const ItemEnCarrito = ({product}) => {
     const navigate = useNavigate();
 
     const {removeItem} = useContext(Shop)
-    const {addItem} = useContext(Shop)
 
-    const [contador, setContador] = useState(0)
     const [total, setTotal] = useState(product.quantity)
-
-    // ver si hay productos en la pagina del carrito
-
-    const [productosEnCarrito, setProductosEnCarrito] = useState(0)
+    const [totalAPagar, setTotalAPagar] = useState(total * product.price)
 
     const handleDetail = () => {
         navigate(`/detail/${product.id}`)
     }
 
     const sumarContador = () => {
-        setContador(contador+1)
         setTotal(total+1)
+        setTotalAPagar(totalAPagar + product.price)
+        product.quantity =+ 1
     }
     
     const restarContador = () => {
-        setContador(contador-1)
-        setTotal(total-1)
+        setTotalAPagar(totalAPagar - product.price)
+        if (product.quantity >= 1){
+            product.quantity =- 1
+            setTotal(total-1)
+        } else {
+            eliminarProducto(product)
+        }
     }
 
     const eliminarProducto = () => {
         setTotal(0)
         removeItem(product)
-    }
-
-    const hayProductos = () => {
-        if (productosEnCarrito>0){
-            return true
-        } else{
-            return false
-        }
     }
 
     return (
@@ -65,13 +58,13 @@ const ItemEnCarrito = ({product}) => {
                         <h3>CANTIDAD</h3>
                         <div className='cardContadorCart'>
                                 <button onClick={sumarContador}>+</button>
-                                <p>{total}</p>
+                                <p>{ total }</p>
                                 <button onClick={restarContador}>-</button>
                         </div>
                     </div>
                     <div className='precioCarrito'>
                         <h3 className='precioDelProducto'>PRECIO</h3>
-                        <p className='figuraPrecio'>${total*product.price}</p>
+                        <p className='figuraPrecio'>${total * product.price}</p>
                     </div>
                     <button className='eliminarDeCarrito' onClick={eliminarProducto}> ELIMINAR PRODUCTO </button>
                 

@@ -7,7 +7,7 @@ import { Shop } from '../../context/ShopContext';
 const ItemCount = ({product, cantidad}) => {
     
 
-    const [stock, setstock]= useState(cantidad);
+    const [stock, setstock]= useState(product.stock);
     const [contador, setContador]= useState(0);
     const [compra, setCompra]= useState(0);
     const [carrito, setCarrito]= useState(0);
@@ -17,37 +17,37 @@ const ItemCount = ({product, cantidad}) => {
     const {addItem} = useContext(Shop)
         
     
-        const sumarCarrito = () => {
-            
-            if ((stock >= 1)){
-                setstock(stock - 1)
-                setContador(contador+1)
-                setCompra(compra + Math.floor(product.price))
-            }
+    const sumarCarrito = () => {
+        
+        if ((stock >= 1)){
+            setstock(stock - 1)
+            setContador(contador+1)
+            setCompra(compra + Math.floor(product.price))
         }
+    }
 
-        const restarCarrito = () => {
-            if (contador>0){
-                setstock(stock + 1)
-                setContador(contador-1)
-                setCompra(compra - Math.floor(product.price))
-            }
+    const restarCarrito = () => {
+        if (contador>0){
+            setstock(stock + 1)
+            setContador(contador-1)
+            setCompra(compra - Math.floor(product.price))
         }
+    }
 
-        const finalizaCompra = () => {
-            addItem(product, carrito)
-            navigate('/cart')
-        }
+    const finalizaCompra = () => {
+        addItem(product, carrito)
+        navigate('/cart')
+    }
 
-        const agregarCarrito = () => {
-            setCarrito(contador)
-            setstock(cantidad-contador)
-            addItem(product, contador)
-        }
+    const agregarCarrito = () => {
+        setCarrito(contador)
+        setstock(cantidad-contador)
+        addItem(product, contador)
+    }
 
-        const seguirComprando = () => {
-            navigate('/')
-        }
+    const seguirComprando = () => {
+        navigate('/')
+    }
     
 
     return (

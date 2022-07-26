@@ -23,11 +23,10 @@ const ShopProvider = ({ children }) => {
         const productoAEliminar = isInCart(producto)
 
         if (productoAEliminar) {
-            productoAEliminar.quantity -= productoAEliminar.quantity
+            setCart(cart.filter((p => p.id !== producto.id)))
+            console.log(cart.length)
+            console.log("se ha eliminado " + producto.title)
         }
-
-        console.log(cart)
-
     }
 
     const isInCart = (producto) => {
@@ -35,7 +34,7 @@ const ShopProvider = ({ children }) => {
     }
 
     return (
-        <Shop.Provider value={{cart, setCart, addItem}}>
+        <Shop.Provider value={{cart, setCart, addItem, removeItem}}>
             {children}
         </Shop.Provider>
     )

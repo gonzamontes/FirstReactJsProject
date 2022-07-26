@@ -31,7 +31,8 @@ button{
 }
 
 button:hover{
-    color: red;
+    color: rgba(153, 23, 23, 0.761);
+    border-color: rgb(0, 33, 95);
 }
 
 div .botones{
