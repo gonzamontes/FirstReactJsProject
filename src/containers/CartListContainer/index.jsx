@@ -14,7 +14,9 @@ const CartListContainer = () => {
     const [correoOrden, setCorreoOrden ] = useState("")
     const [numeroOrden, setNumeroOrden ] = useState(0)
     const [precioTotal, setPrecioTotal] = useState(0)
+    let listaDePrecios = []
 
+    
     const navigate = useNavigate()
 
     const toggle = () => {
@@ -36,8 +38,9 @@ const CartListContainer = () => {
 
     const sumaDeActivos = () => {
         cart.map(producto => {
-            let precioTotalProducto = (producto.price * producto.quantity);
-            setPrecioTotal(precioTotal + precioTotalProducto)
+            listaDePrecios.push(producto.price*producto.quantity)
+            setPrecioTotal(listaDePrecios.reduce((sum,value) => sum + value))
+            console.log(precioTotal)
         })
         toggle()
     }
@@ -66,6 +69,11 @@ const CartListContainer = () => {
 
             { (cart.length>0) ?
                 <>  
+                    <h1 className='tituloDeCarrito'>Tus productos:</h1>
+                    <Cart></Cart>
+                    <div className='div-orden'>
+                        <button onClick={sumaDeActivos} className='enviar-orden' >Enviar orden</button>
+                    </div>
                     
                     <Modal active={active} toggle={toggle}>
                         <h3 className='tituloModal'>Por favor complete todo los campos</h3>
@@ -86,11 +94,7 @@ const CartListContainer = () => {
                         </form>
                         
                     </Modal>
-                    <h1 className='tituloDeCarrito'>Tus productos:</h1>
-                    <Cart></Cart>
-                    <div className='div-orden'>
-                        <button onClick={sumaDeActivos} className='enviar-orden' >Enviar orden</button>
-                    </div>
+                    
                 </>
                 : 
 
