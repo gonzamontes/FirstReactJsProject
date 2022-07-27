@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './components/NavBar.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Input from './components/Input';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

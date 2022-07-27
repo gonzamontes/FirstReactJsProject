@@ -1,9 +1,7 @@
 .logo-carrito{
     color: whitesmoke;
     margin-right: 1rem;
-    margin-left: 37rem ;
     }
-
 
 .logo-carrito:hover{
     color: red;
@@ -13,7 +11,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-
+    margin-right: 2rem;
 }
 
 .cantidad-en-carrito{

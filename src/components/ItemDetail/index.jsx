@@ -12,7 +12,7 @@ const ItemDetail = ({product}) => {
             <h3>Categoria: {product.category}</h3>
             <h2>${Math.floor(product.price)}</h2>
 
-            <ItemCount product={product} key={product.id} cantidad={15} />
+            <ItemCount product={product} key={product.id}/>
         </div>
     )
 }

@@ -8,9 +8,13 @@ const ItemEnCarrito = ({product}) => {
 
     const navigate = useNavigate();
 
-    const {removeItem} = useContext(Shop)
+    const { deleteItem, reduceItem, expandItem } = useContext(Shop)
+    const { cart } = useContext(Shop)
 
+    // el total se modificara con el quantity del producto cada vez que se llame a las funciones reduce o expand, para poder mostrarlo en pantalla 
     const [total, setTotal] = useState(product.quantity)
+
+    // el total a pagar se mostrara en... 
     const [totalAPagar, setTotalAPagar] = useState(total * product.price)
 
     const handleDetail = () => {
@@ -18,16 +22,15 @@ const ItemEnCarrito = ({product}) => {
     }
 
     const sumarContador = () => {
-        setTotal(total+1)
-        setTotalAPagar(totalAPagar + product.price)
-        product.quantity =+ 1
+        expandItem(product)
+        setTotal(product.quantity)
     }
     
     const restarContador = () => {
         setTotalAPagar(totalAPagar - product.price)
-        if (product.quantity >= 1){
-            product.quantity =- 1
-            setTotal(total-1)
+        if (total >= 1){
+            reduceItem(product)
+            setTotal(product.quantity)
         } else {
             eliminarProducto(product)
         }
@@ -35,14 +38,14 @@ const ItemEnCarrito = ({product}) => {
 
     const eliminarProducto = () => {
         setTotal(0)
-        removeItem(product)
+        deleteItem(product)
     }
 
     return (
         
         <>
 
-            {(total>0) ?
+            {(cart.length > 0) ?
                 <div className='productoEnCarrito'>
                 
                     <div className='seccionIzquierda'>
@@ -70,8 +73,11 @@ const ItemEnCarrito = ({product}) => {
                 
 
                 </div>
+
             :
-            null
+
+                null
+            
             }
 
         </>

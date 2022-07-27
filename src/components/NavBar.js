@@ -9,15 +9,16 @@ const NavBar = () => {
     const {estadoA} = useContext(Shop)
 
     return(
-        <ul>
+        <header>
+            <ul>
             <li><a><Link to={"/"} className="logoTienda">T I E N D A  M O N T E S</Link></a></li>
             <li><a className="opcion"><Link to={'/category/electronics'}>Electronics</Link></a></li>
             <li><a className="opcion"><Link to={'/category/jewelery'}>Jewelery</Link></a></li>
             <li><a className="opcion"><Link to={"/category/women's"}>Women's</Link></a></li>
             <li><a className="opcion"><Link to={"/category/men's"}>Men's</Link></a></li>
-            <li><a><Link to={"/cart"}><CartWidget/></Link></a></li>
-            
+            <li><a className="cartWidget"><Link to={"/cart"}><CartWidget/></Link></a></li>
         </ul>
+        </header>
     )
 }
 

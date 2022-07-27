@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ItemEnCarrito from '../../components/ItemEnCarrito/index';
 import { Shop } from '../../context/ShopContext';
 import './style.css';

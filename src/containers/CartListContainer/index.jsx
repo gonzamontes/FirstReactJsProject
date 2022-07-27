@@ -13,7 +13,7 @@ const CartListContainer = () => {
     const [nombreOrden, setNombreOrden ] = useState("")
     const [correoOrden, setCorreoOrden ] = useState("")
     const [numeroOrden, setNumeroOrden ] = useState(0)
-    const [activos, setActivos] = useState(0)
+    const [precioTotal, setPrecioTotal] = useState(0)
 
     const navigate = useNavigate()
 
@@ -35,24 +35,23 @@ const CartListContainer = () => {
     }
 
     const sumaDeActivos = () => {
-        if (activos > 0){
-            toggle()
-        } else{
-            cart.forEach(producto => setActivos(activos + (producto.price * producto.quantity)))
-            toggle()
-        }
+        cart.map(producto => {
+            let precioTotalProducto = (producto.price * producto.quantity);
+            setPrecioTotal(precioTotal + precioTotalProducto)
+        })
+        toggle()
     }
 
     const confirmarOrden = async () => {
         
         if (nombreOrden == '' || nombreOrden.length < 3){
-            alert('El nombre es requerido')
+            alert('Verificá los campos...')
         } else if (correoOrden == '' || correoOrden.length < 10){
             alert('El correo es requerido')
         } else if (numeroOrden == null || numeroOrden.length < 6){
             alert('El numero telefonico es requerido')
         }else{
-            const orden = ordenGenerada(nombreOrden, correoOrden, numeroOrden , cart, activos)
+            const orden = ordenGenerada(nombreOrden, correoOrden, numeroOrden , cart, precioTotal)
             guardarOrden(cart, orden)
             toggle()
         }
@@ -66,26 +65,32 @@ const CartListContainer = () => {
         <>
 
             { (cart.length>0) ?
-                <>
-                    <Cart></Cart>
-                    <div className='div-orden'>
-                        <button onClick={sumaDeActivos} className='enviar-orden' >Enviar orden</button>
-                    </div>
+                <>  
+                    
                     <Modal active={active} toggle={toggle}>
+                        <h3 className='tituloModal'>Por favor complete todo los campos</h3>
                         <form className='formulario' onSubmit={ev => {
                             ev.preventDefault();
                             setCorreoOrden(ev.target.mail.value)
                             setNombreOrden(ev.target.nombre.value)
                             setNumeroOrden(ev.target.numero.value)
                         }}>
+                            <label htmlFor="nombre">Ingrese su nombre:</label>
                             <input type="text" name='nombre' placeholder='Nombre' required/>
+                            <label htmlFor="mail">Ingrese su email:</label>
                             <input type="email" name='mail' placeholder='Email' required/>
+                            <label htmlFor="numero">Ingrese su telefono:</label>
                             <input type="number" name='numero' placeholder='Numero de telefono' required/>
-                            <p>Total a pagar: ${activos}</p>
-                            <button type='submit' onClick={confirmarOrden}> Finalizar compra </button>
+                            <p className='total-a-pagar'>Total a pagar: ${precioTotal}</p>
+                            <button type='submit' className='btnFinalizarCompra' onClick={confirmarOrden}> Finalizar compra </button>
                         </form>
                         
                     </Modal>
+                    <h1 className='tituloDeCarrito'>Tus productos:</h1>
+                    <Cart></Cart>
+                    <div className='div-orden'>
+                        <button onClick={sumaDeActivos} className='enviar-orden' >Enviar orden</button>
+                    </div>
                 </>
                 : 
 
@@ -93,7 +98,7 @@ const CartListContainer = () => {
                 <div className='noProductosDiv'>
                     <h1 className='noHayProductos'> No hay productos :( </h1>
                     <button onClick={seguirComprando} className='seguirComprando' >Agregá algo!</button>
-                </div>
+                </div> 
                     
                 </>
                 

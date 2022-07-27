@@ -10,7 +10,7 @@
 .contenedorCard{
     border: 3px;
     border-style: groove;
-    border-radius: 10px;
+    border-radius: 4px;
     width: 35rem;
     margin: auto;
     text-align: center;
@@ -22,6 +22,7 @@ button{
     color: #4c64d0;
     font-size: 1.8rem;
     font-weight: bolder;
+    background-color: white;
 }
 
 .agregarCarrito{
@@ -32,7 +33,7 @@ button{
 
 button:hover{
     color: rgba(153, 23, 23, 0.761);
-    border-color: rgb(0, 33, 95);
+    border-color: rgba(48, 59, 79, 0.439);
 }
 
 div .botones{
@@ -46,15 +47,8 @@ div .botones{
     font-size: large;
     margin:  5px auto;
     padding: 4px 10px;
-    border: solid rgb(151, 181, 191) 2px;
-    border-radius: 10px;
-}
-
-.seguirComprando{
-    width: 30rem;
-    font-size: large;
-    margin: 5px auto;
-    padding: 4px 10px;
-    border: solid rgb(151, 181, 191) 2px;
-    border-radius: 10px;
+    border: solid rgb(151, 181, 191) 1px;
+    border-radius: 2px;
+    border-right: none;
+    border-left: none;
 }

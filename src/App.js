@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemDetailContainer from './containers/ItemDetailContainer';
@@ -13,14 +12,14 @@ function App() {
   return (
     <ShopProvider>
       <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer/>}></Route>
-        <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
-        <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
-        <Route path='/cart' element={<CartListContainer></CartListContainer>}></Route>
-        <Route path='*' element={<NotFound/>}></Route>
-      </Routes>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}></Route>
+          <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
+          <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
+          <Route path='/cart' element={<CartListContainer></CartListContainer>}></Route>
+          <Route path='*' element={<NotFound/>}></Route>
+        </Routes>
     </BrowserRouter>
     </ShopProvider>
   );

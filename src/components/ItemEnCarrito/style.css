@@ -1,7 +1,8 @@
 .productoEnCarrito{
-    border: groove rgb(151, 181, 191) 1px;
+    border: groove rgba(87, 100, 138, 0.423) 1px;
     border-left: 0px;
     border-right: 0px;
+    border-top: 0px;
     margin: 10px 0px;
     display: flex;
     flex-direction: row;
@@ -37,12 +38,23 @@
 
 .eliminarDeCarrito{
     margin: auto 3rem;
+    padding: 0.5rem;
     color: rgba(6, 47, 98, 0.794);
 
     width:auto;
     font-size: medium;
-    border: solid 1px rgba(6, 47, 98, 0.794);
-    border-radius: 5px;
+    border-image: linear-gradient(90deg, rgb(100, 100, 212), white);
+    border-width: 2px;
+    border-style: solid;
+    border-image-slice: 1;
+    text-align: center;
+}
+
+.eliminarDeCarrito:hover{
+    border-image: linear-gradient(90deg, rgb(212, 100, 100), white);
+    border-width: 1px;
+    border-style: solid;
+    border-image-slice: 1;
 }
 
 .precioCarrito{

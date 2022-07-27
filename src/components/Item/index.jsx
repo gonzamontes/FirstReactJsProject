@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css';
 import { useNavigate } from "react-router-dom";
 
-const ItemEnCarrito = ({product}) => {
+const ItemEnCarrito = ({ product }) => {
 
   const navigate = useNavigate();
   
@@ -13,7 +13,12 @@ const ItemEnCarrito = ({product}) => {
   return (
     <div className='tarjetaProducto' onClick={handleDetail}>
         <div className='headProducto'>
-            <h3>{product.title}</h3>
+          {(product.stock === 0) ?
+            <h3>{product.title}</h3>  
+            :
+            <h3 className='OutOfStock'>{product.title}</h3>
+            }
+
             <img src={product.image} alt={product.title} />
         </div>
         <div className='informacionProducto'>

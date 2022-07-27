@@ -1,16 +1,28 @@
 body {
     background-color:white;
+    margin: 0%;
   }
+
+header{
+  width: 100%;
+  margin: 0%;
+}
+
   ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     overflow: hidden;
     background-color: #313751;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between ;
+    align-items: center ;
   }
   
   li {
-    float: left;
+    
   }
 
   li a{
@@ -23,10 +35,12 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    height: 100%;
   }
   
   .opcion:hover{
     background-color: red;
+    border-top: solid white 3px;
   }
   
   li.dropdown {
@@ -58,12 +72,16 @@ body {
 
   li .logoTienda{
     margin-inline: 2rem;
-    /* font-family: 'Anton', sans-serif; */
     font-size: large;
   }
 
   .logoTienda:hover{
     letter-spacing: 0.5px;
-    color: red;
+    font-size: x-large;
+    font-weight: bolder;
+  }
+
+  .cartWidget{
+    padding: 0%;
   }
   

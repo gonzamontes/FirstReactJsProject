@@ -1,5 +1,12 @@
 div .contenedorCards{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    width: 90%;
+    margin: 3% auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+}
+
+.tituloProductos{
+    text-transform: uppercase;
+    font-size: 17px;
 }
