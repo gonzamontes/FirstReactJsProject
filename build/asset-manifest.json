@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gonzamontes/Curso-React-CoderHouse.git/static/css/main.7f1012cf.css",
+    "main.js": "/gonzamontes/Curso-React-CoderHouse.git/static/js/main.4c2977ae.js",
+    "static/js/787.9a2699a6.chunk.js": "/gonzamontes/Curso-React-CoderHouse.git/static/js/787.9a2699a6.chunk.js",
+    "index.html": "/gonzamontes/Curso-React-CoderHouse.git/index.html",
+    "main.7f1012cf.css.map": "/gonzamontes/Curso-React-CoderHouse.git/static/css/main.7f1012cf.css.map",
+    "main.4c2977ae.js.map": "/gonzamontes/Curso-React-CoderHouse.git/static/js/main.4c2977ae.js.map",
+    "787.9a2699a6.chunk.js.map": "/gonzamontes/Curso-React-CoderHouse.git/static/js/787.9a2699a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f1012cf.css",
+    "static/js/main.4c2977ae.js"
+  ]
+}

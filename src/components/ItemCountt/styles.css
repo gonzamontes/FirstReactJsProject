@@ -1,0 +1,54 @@
+.cardContador{
+    position: center;
+    width: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: auto;
+}
+
+.contenedorCard{
+    border: 3px;
+    border-style: groove;
+    border-radius: 4px;
+    width: 35rem;
+    margin: auto;
+    text-align: center;
+}
+
+button{
+    border-style: none;
+    width: 3rem;
+    color: #4c64d0;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    background-color: white;
+}
+
+.agregarCarrito{
+    width: auto;
+    font-size: large;
+    margin-bottom: 1rem;
+}
+
+button:hover{
+    color: rgba(153, 23, 23, 0.761);
+    border-color: rgba(48, 59, 79, 0.439);
+}
+
+div .botones{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.finalizarCompra{
+    width: 30rem;
+    font-size: large;
+    margin:  5px auto;
+    padding: 4px 10px;
+    border: solid rgb(151, 181, 191) 1px;
+    border-radius: 2px;
+    border-right: none;
+    border-left: none;
+}

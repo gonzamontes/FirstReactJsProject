@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+.contadorItem{
+  position: flex;
+  flex-direction: row;
+}
